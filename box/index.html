@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>JQ Click Box</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CD BS w jQ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <script>
+$(document).ready(function(){
+  $('.select_item').click(function(){
+    var ditem = $(this).attr('data-item');
+      $('.content_item').hide("slow").filter( '[data-item="'+ditem+'"]' ).show("slow");
+        return false;
+    });
+});
+        </script>
+
+
+<style media="screen">
+ body{transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}#content{min-height:900px;background:url(http://example.de/try/fileadmin/projekte/AGP_Fliesen.png);background-size:cover;background-repeat:no-repeat}#prodoverlay{text-align:center;min-height:650px;position:relative;top:40%}#fliesen{-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out;font-size:12px;font-family:Roboto;background:#fff;padding:5px 30px;letter-spacing:.02em;max-width:485px;margin-left:15px;height:450px;overflow-y:scroll;position:relative;z-index:999}#fliesen ul{padding:15px}#fliesen ul li{list-style-image:url(http://example.de/try/fileadmin/projekte/dot.png);padding:5px}#fliesen h1{font-size:37px}#fliesen > div{display:none}#fliesen > div:target{display:block}#plus{cursor:pointer;position:relative;top:300px;width:30px;overflow:hidden}#plusminus{width:60px;position:relative}.breadcrumb-section,.breadcrumb,.breadcrumb a{display:none;background-color:transparent!important;border:0;margin-bottom:0!important;font-size:10px!important;color:#fff!important;position:absolute}#slimpanel{max-width:50px;margin:22px -97px}#slimpanel> div:last-of-type{border-right:1px solid;border-color:#ffc0cb}#slimpanel{outline:2px solid #fff}#slimpanel div:not(#last){border-bottom:2px solid #fff}
+</style>
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+<h1>Lorem ipsum dolor sit amet, </h1> sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.                Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.
+Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. 
+            </p>
+          </div>
+        </div>
+      </div>
+
+<!-- wit typo3 -->
+        <div class="container">
+        		<div class="row">
+        			<main class="col-md-6" role="main">
+        				<div id="c176" class="csc-space-before-50 csc-space-after-50">
+                  <div id="fliesen" style="visibility:visible;">
+
+          <div id="projekte-1" class="content_item" data-item="p1">
+            <h1>COMPANY -<br /><b> Blind </b></h1>
+            <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
+              Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
+
+          </div>
+          <div id="projekte-2" class="content_item" data-item="p2">
+            <h1>COMPANY -<br /><b> Lorem ipsum</b></h1>
+            <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
+              Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
+          </div>
+          <div id="projekte-3" class="content_item" data-item="p3">
+            <h1>COMPANY -<br /><b> Dolor sit</b></h1>
+            <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
+              Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
+          </div>
+          <div id="projekte-4" class="content_item" data-item="p4">
+            <h1>COMPANY -<br /><b> Amet</b></h1>
+            <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
+              Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
+          </div>
+          <div id="projekte-5" class="content_item" data-item="p5">
+            <h1>COMPANY -<br /><b> Content5</b></h1>
+            <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
+              Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
+          </div>
+        </div>
+        </div>
+        			</main>
+        			<div class="col-md-6">
+
+        <div id="c182">
+          <div id="slimpanel" style="display:visible, outline: 1px solid red">
+          <div><a class="select_item" data-item="p1"><img src="http://placehold.it/50x50"></a></div>
+          <div><a href="#projekte-2" class="select_item" data-item="p2"><img src="http://placehold.it/50x50"></a></div>
+          <div><a href="#projekte-3" class="select_item" data-item="p3"><img src="http://placehold.it/50x50"></a></div>
+          <div><a href="#projekte-4" class="select_item" data-item="p4"><img src="http://placehold.it/50x50"></a></div>
+          <div id="last">
+            <a href="#projekte-5" class="select_item" data-item="p5"><img src="http://placehold.it/50x50">           </a>
+            </div>
+        </div></div>
+        			</div>
+        		</div>
+        	</div>
+
+<!-- wit -->
+
+
+    </body>
+</html>
