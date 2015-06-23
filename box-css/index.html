@@ -9,9 +9,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
-
+<script>
+$(document).ready(function(){
+    var hash = location.hash;
+    if(hash){ $('.content_item').hide("slow").filter('[data-item="'+hash.substr(1)+'"]').show("slow"); }
+    $('.select_item').click(function(){
+      var item = $(this).attr('data-item');
+      $('.content_item').hide("slow").filter('[data-item="'+item+'"]').show("slow");
+      window.location.hash = item;
+      return false;
+      });
+    });
+</script>
 <style media="screen">
 body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
 h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
@@ -55,7 +64,7 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 
        <div id="fliesen" style="visibility:visible;">
 
-                                    <div id="projekte-1">
+                                    <div id="projekte-1" class="content_item" data-item="p1">
                                       <h1>Some -<br /><b> Heading </b></h1>
                                        <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
@@ -64,22 +73,22 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
                                           <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                               Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
                                     </div>
-                                    <div id="projekte-2">
+                                    <div id="projekte-2" class="content_item" data-item="p2">
                                       <h1>AGP -<br /><b> Lorem ipsum</b></h1>
                                       <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
                                     </div>
-                                    <div id="projekte-3">
+                                    <div id="projekte-3" class="content_item" data-item="p3">
                                       <h1>AGP -<br /><b> Dolor sit</b></h1>
                                       <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
                                     </div>
-                                    <div id="projekte-4">
+                                    <div id="projekte-4" class="content_item" data-item="p4">
                                       <h1>AGP -<br /><b> Amet</b></h1>
                                       <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
                                     </div>
-                                    <div id="projekte-5">
+                                    <div id="projekte-5" class="content_item" data-item="p5">
                                       <h1>AGP -<br /><b> Trockenbau</b></h1>
                                       <p>Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
                                         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos. Usu docendi invenire cu.</p>
@@ -91,11 +100,11 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 
    <div class="col-md-6">
       <div id="slimpanel">
-        <div><a href="#projekte-1"><img src="http://placehold.it/50x50"></a></div>
-        <div><a href="#projekte-2"><img src="http://placehold.it/50x50"></a></div>
-        <div><a href="#projekte-3"><img src="http://placehold.it/50x50"></a></div>
-        <div><a href="#projekte-4"><img src="http://placehold.it/50x50"></a></div>
-        <div id="last"><a href="#projekte-5"><img src="http://placehold.it/50x50"></a></div>
+        <div><a href="#projekte-1" class="select_item" data-item="p1"><img src="http://placehold.it/50x50"></a></div>
+        <div><a href="#projekte-2" class="select_item" data-item="p2"><img src="http://placehold.it/50x50"></a></div>
+        <div><a href="#projekte-3" class="select_item" data-item="p3"><img src="http://placehold.it/50x50"></a></div>
+        <div><a href="#projekte-4" class="select_item" data-item="p4" ><img src="http://placehold.it/50x50"></a></div>
+        <div id="last"><a href="#projekte-5" class="select_item" data-item="p5"><img src="http://placehold.it/50x50"></a></div>
       </div>
    </div><!-- col6 -->
 
@@ -105,9 +114,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
  <div class="container">
    <div class="row">
      <div class="col-md-12" style="background:rgba(255,255,255,0.6);margin:30px;">
-       <h1>Pure CSS box with content on thumbnail click</h1>
-       Lorem ipsum dolor sit amet, sed no iudico deleniti, ignota labore omittantur id usu. Laboramus adolescens appellantur eu qui, postea consetetur vix cu.
-         Lorem eripuit et mei, sit illud semper minimum ea, eu diam utinam definitionem mei. Tritani recusabo partiendo ne eos.
+       <h1>Anchor based CSS/jQuery box</h1>
+It is possible to swap the content with pure CSS anchor links as well, directing the href into a div with #ID.
+That approach however makes the box jump up on click in case the target div is not placed at the absolute top of the page.
      </div>
    </div>
  </div>
