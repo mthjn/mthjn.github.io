@@ -1,9 +1,19 @@
 <html>
     <head>
-        <title>JQ Click Box</title>
+        <title>CSS3 Image Preload</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$( "#content" ).click(function() {
+  var image = "../resources/img/2.jpg";
+  $( this ).css( "background", image );
+  console.log(image);
+});
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <style media="screen">
 /*generals*/
 body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
@@ -13,14 +23,6 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 /*images being shown default*/
 #content {min-height:900px;background:url('../resources/img/img1.jpg');background-size:cover;background-repeat:no-repeat}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-$( "#content" ).click(function() {
-  var image = "../resources/img/2.jpg";
-  $( this ).css( "background", image );
-  console.log(image);
-});
-</script>
     </head>
     <body>
      <div id="content">
@@ -51,8 +53,5 @@ $( "#content" ).click(function() {
 	}
 </style>
 <!-- CD BS w jQ -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </body>
 </html>
