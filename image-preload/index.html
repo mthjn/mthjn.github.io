@@ -8,7 +8,7 @@
 console.log("omg");
 $( "#bgchange" ).click(function() {
   var imbg = "../resources/img/2.jpg";
-  $( #content ).css( "background-image", "url(../resources/img/2.jpg)" );
+  $( #content ).addClass("selected") );
   console.log( "2" );
 });
 </script>
@@ -52,6 +52,7 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 		    url('../resources/img/5.jpg') no-repeat -9999px -9999px,
 		    url('../resources/img/5B.jpg') no-repeat -9999px -9999px;
 	}
+.selected {min-height:900px;background:url('../resources/img/2.jpg');background-size:cover;background-repeat:no-repeat}
 </style>
 <!-- CD BS w jQ -->
     </body>
