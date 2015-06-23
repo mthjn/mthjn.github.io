@@ -23,9 +23,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 @media (min-width: 1201px){#slimpanel{margin: 2px -77px}}
 
 /*White box */
-#fliesen {-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out;font-size:12px;font-family:Roboto;background:#fff;padding:5px 30px;letter-spacing:.02em;max-width:485px;margin-bottom:150px;height:450px;overflow-y:scroll;position:relative;z-index:999}
+#fliesen {font-family:sans-serif;-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out;font-size:12px;font-family:Roboto;background:#fff;padding:5px 30px;letter-spacing:.02em;max-width:485px;margin-bottom:150px;height:450px;overflow-y:scroll;position:relative;z-index:999}
 #fliesen ul {padding:15px}
-#fliesen ul li {list-style-image:url("http://example.de/try/fileadmin/projekte/dot.png");padding:5px}
-#fliesen h1 {font-size:37px}
+#fliesen ul li {list-style-image:url("http://example.de/try/fileadmin/projekte/dot.png");padding:5px;font-family:sans-serif}
+#fliesen h1 {font-size:37px;font-family:sans-serif}
 #fliesen > div {display:none}
 #fliesen > div:target {display:block}
