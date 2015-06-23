@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 <style media="screen">
  body{transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
- p{padding:31px;transition: all 0.5s ease-in-out}p:hover{background: rgba(196, 190, 195, 0.34)}
+ p{padding:31px;transition: all 0.5s ease-in-out}p:hover{background: rgba(196, 190, 195, 0.34);transition: all 0.5s ease-in-out}
  #content{min-height:900px;background:url(http://example.de/try/fileadmin/projekte/AGP_Fliesen.png);background-size:cover;background-repeat:no-repeat}#prodoverlay{text-align:center;min-height:650px;position:relative;top:40%}#fliesen{-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out;font-size:12px;font-family:Roboto;background:#fff;padding:5px 30px;letter-spacing:.02em;max-width:485px;margin-left:15px;height:450px;overflow-y:scroll;position:relative;z-index:999}#fliesen ul{padding:15px}#fliesen ul li{list-style-image:url(http://example.de/try/fileadmin/projekte/dot.png);padding:5px}#fliesen h1{font-size:37px}#fliesen > div{display:none}#fliesen > div:target{display:block}#plus{cursor:pointer;position:relative;top:300px;width:30px;overflow:hidden}#plusminus{width:60px;position:relative}.breadcrumb-section,.breadcrumb,.breadcrumb a{display:none;background-color:transparent!important;border:0;margin-bottom:0!important;font-size:10px!important;color:#fff!important;position:absolute}#slimpanel{max-width:50px;margin:22px -97px}#slimpanel> div:last-of-type{border-right:1px solid;border-color:#ffc0cb}#slimpanel{outline:2px solid #fff}#slimpanel div:not(#last){border-bottom:2px solid #fff}
 </style>
     </head>
@@ -35,7 +35,8 @@ $(document).ready(function(){
         			<div class="col-md-4">
         			</div>
               <div class="col-md-4" style="background: #E7E7EF;">
-                <h1>Sandboxes for tweaks around CMS / WebDev</h1>
+                <h1 style="text-align:center">Sandboxes</h1>
+                <h2 style="text-align:center">for tweaks around CMS / WebDev</h2>
                   <p><a href="/box/">TYPO3 compatible // jQuery links from thumbnail into a container (for sliders or image headers)</a></p>
                   <p><a href="/box-css/"><b>NOT</b> TYPO3 compatible // CSS/jQuery links from thumbnail into a container. TYPO3 cannot handle this art of anchor links though, oh well.</a></p>
                   <p></p>
