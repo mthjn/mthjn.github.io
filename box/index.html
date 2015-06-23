@@ -5,53 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CD BS w jQ -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="../resources/css/style.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-        <script>
-$(document).ready(function(){
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
   $('.select_item').click(function(){
     var ditem = $(this).attr('data-item');
       $('.content_item').hide("slow").filter( '[data-item="'+ditem+'"]' ).show("slow");
         return false;
     });
-});
-        </script>
-
-
-<style media="screen">
-body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
-h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
-#content {min-height:900px;background:url('http://i1065.photobucket.com/albums/u381/jana2511/unsplash_Galymzhan%20Abdugalimov_notebook_zpsutsgzhc7.jpg');background-size:cover;background-repeat:no-repeat}
-#prodoverlay {text-align:center;min-height:650px;position:relative;top:40%}
-#fliesen {-webkit-transition:all 1s ease-in-out;transition:all 1s ease-in-out;font-size:12px;font-family:Roboto;background:#fff;padding:5px 30px;letter-spacing:.02em;max-width:485px;margin-left:15px;height:450px;overflow-y:scroll;position:relative;z-index:999}
-#fliesen ul {padding:15px}
-#fliesen ul li {list-style-image:url(http://example.de/try/fileadmin/projekte/dot.png);padding:5px}
-#fliesen h1 {font-size:37px}
-#fliesen > div {display:none}
-#fliesen > div:target {display:block}
-#plus {cursor:pointer;position:relative;top:300px;width:30px;overflow:hidden}
-#plusminus {width:60px;position:relative}
-.breadcrumb-section,.breadcrumb,.breadcrumb a {display:none;background-color:transparent!important;border:0;margin-bottom:0!important;font-size:10px!important;color:#fff!important;position:absolute}
-#slimpanel {max-width:50px;margin:22px -97px}
-#slimpanel> div:last-of-type {border-right:1px solid;border-color:#ffc0cb}
-#slimpanel {outline:2px solid #fff}
-#slimpanel div:not(#last) {border-bottom:2px solid #fff}
-@media (max-width: 400px) {
-  #slimpanel{margin: 0 auto;margin-top: 20px;margin-bottom: 30px}
-}
-@media (max-width: 1000px){
-  #slimpanel{margin: 17px 20px 30px 17px}
-}
-@media (max-width: 1200px){
-  #slimpanel{margin: 2px -24px}
-}
-@media (min-width: 1201px){
-  #slimpanel{margin: 2px -77px}
-}
-</style>
+ });
+</script>
     </head>
     <body>
      <div id="content">
@@ -122,7 +89,6 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 </div>
 
 <!-- wit -->
-
-
+<div id="home"><a href="/">HOME</a></div>
     </body>
 </html>
