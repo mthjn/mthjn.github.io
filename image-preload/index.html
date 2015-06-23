@@ -13,6 +13,12 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 /*images being shown default*/
 #content {min-height:900px;background:url('../resources/img/img1.jpg');background-size:cover;background-repeat:no-repeat}
 </style>
+<script>
+$( "#content" ).click(function() {
+  var image = "../resources/img/2.jpg";
+  $( this ).css( "background", image );
+});
+</script>
     </head>
     <body>
      <div id="content">
@@ -21,7 +27,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
         <div class="row">
           <div class="col-md-12" style="background:rgba(255,255,255,0.6);margin:30px;">
             <h1>Image Preload with CSS3</h1>
-            <p>CSS3 Multiple Background Property (doesn't work with Internet Explorer)</p>
+        <p>CSS3 Multiple Background Property (doesn't work with Internet Explorer)</p>
+        <p>There is five more images that load invisibly (check console), use them to change the background onClick</p>
+
         </div>
         </div>
       </div>
@@ -29,7 +37,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 <div class="preload-images"></div>
 <style>
 .preload-images {
+  /*single*/
 	background: url('../resources/img/1.jpg') no-repeat -9999px -9999px;
+  /*multiple*/
 	background:
 	     url('../resources/img/2.jpg') no-repeat -9999px -9999px,
 		    url('../resources/img/3.jpg') no-repeat -9999px -9999px,
