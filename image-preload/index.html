@@ -6,10 +6,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 console.log("omg");
-$( "#content" ).click(function() {
-  var image = "../resources/img/2.jpg";
-  $( this ).css( "background", image );
-  console.log("omg 2");
+$( "#bgchange" ).click(function() {
+  var imbg = "../resources/img/2.jpg";
+  $( #content ).css( "background", "url("+imbg+")" );
+  console.log( imbg );
 });
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
             <h1>Image Preload with CSS3</h1>
         <p>CSS3 Multiple Background Property (doesn't work with Internet Explorer)</p>
         <p>There is five more images that load invisibly (check console), use them to change the background onClick</p>
-
+	<button id="bgchange">CLICK</button>
         </div>
         </div>
       </div>
