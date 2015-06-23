@@ -5,6 +5,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 /* Main */
 #content {min-height:900px;background:url('http://i1065.photobucket.com/albums/u381/jana2511/unsplash_Galymzhan%20Abdugalimov_notebook_zpsutsgzhc7.jpg');background-size:cover;background-repeat:no-repeat}
 #prodoverlay {text-align:center;min-height:650px;position:relative;top:40%}
+::-webkit-scrollbar{width:7px} /* chrome */
+::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 8px rgba(0,0,0,0.3)}
+::-webkit-scrollbar-thumb{background-color:#333}
 
 /* Buttons, Sprites */
 #home {padding: 10px 15px;background: #FFFFFF;width: 80px;color: #333;position: fixed;left: 0;bottom: 0;}
