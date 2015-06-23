@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-console.log("omg");
-$( "#bgchange" ).click(function() {
-  var imbg = "../resources/img/2.jpg";
-  $( #content ).addClass("selected") );
-  console.log( "2" );
-});
+console.log( "aye ready!" );
+function toggle_bg(id) {
+  var e = document.getElementById(id);
+  if ( e.className == "bild1") e.className += " bild2";
+  else e.className = "bild1";
+}
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -30,11 +30,23 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 
       <div class="container">
         <div class="row">
-          <div class="col-md-12" style="background:rgba(255,255,255,0.6);margin:30px;">
+          <div class="col-md-12" style="background:rgba(255,255,255,0.6);margin:30px;padding: 60px 230px;">
             <h1>Image Preload with CSS3</h1>
         <p>CSS3 Multiple Background Property (doesn't work with Internet Explorer)</p>
         <p>There is five more images that load invisibly (check console), use them to change the background onClick</p>
-	<button id="bgchange">CLICK</button>
+	<p><button id="bgchange" onclick="toggle_bg('content')">CLICK</button></p>
+
+        <p>IMG on load has 48.2 kB, not preloaded. The rest of the images are at 548 kB and 643 kB, but with CSS preload</p>
+        <p>
+          <pre>
+            background:
+                 url('../resources/img/2.jpg') no-repeat -9999px -9999px,
+                  url('../resources/img/3.jpg') no-repeat -9999px -9999px,
+                  url('../resources/img/4.jpg') no-repeat -9999px -9999px,
+                  url('../resources/img/5.jpg') no-repeat -9999px -9999px,
+                  url('../resources/img/5B.jpg') no-repeat -9999px -9999px;
+          </pre>
+        </p>
         </div>
         </div>
       </div>
@@ -52,7 +64,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 		    url('../resources/img/5.jpg') no-repeat -9999px -9999px,
 		    url('../resources/img/5B.jpg') no-repeat -9999px -9999px;
 	}
-.selected {min-height:900px;background:url('../resources/img/2.jpg');background-size:cover;background-repeat:no-repeat}
+  #content{transition: all 1s ease-in-out}
+  .bild1 {min-height:900px!important;background:url('../resources/img/4.jpg')!important;background-size:cover!important;background-repeat:no-repeat!important}
+  .bild2 {min-height:900px!important;background:url('../resources/img/5B.jpg')!important;background-size:cover!important;background-repeat:no-repeat!important}
 </style>
 <!-- CD BS w jQ -->
     </body>
