@@ -11,11 +11,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 <style media="screen">
+/*generals*/
 body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
 h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
-#content {min-height:900px;background:url('../resources/img/img1.jpg');background-size:cover;background-repeat:no-repeat}
+/*design*/
 #prodoverlay {text-align:center;min-height:650px;position:relative;top:40%}
-
+/*images being shown default*/
+#content {min-height:900px;background:url('../resources/img/img1.jpg');background-size:cover;background-repeat:no-repeat}
 </style>
     </head>
     <body>
@@ -25,11 +27,22 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
         <div class="row">
           <div class="col-md-12" style="background:rgba(255,255,255,0.6);margin:30px;">
             <h1>Image Preload with CSS3</h1>
-
-
+            <p>CSS3 Multiple Background Property (doesn't work with Internet Explorer)</p>
         </div>
         </div>
       </div>
 
+
+<style>
+.preload-images {
+	background: url(/resources/img/1.jpg) no-repeat -9999px -9999px;
+	background:
+	     url(/resources/img/2.jpg) no-repeat -9999px -9999px,
+		    url(/resources/img/3.jpg) no-repeat -9999px -9999px,
+		    url(/resources/img/4.jpg) no-repeat -9999px -9999px,
+		    url(/resources/img/5.jpg) no-repeat -9999px -9999px,
+		    url(/resources/img/5B.jpg) no-repeat -9999px -9999px;
+	}
+</style>
     </body>
 </html>
