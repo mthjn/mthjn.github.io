@@ -1,0 +1,14 @@
+body {font-family: monospace, sans-serif; color:#333; background-color:#f4f4f4; font-size:12px;}
+
+a:link, a:active, a:visited {font-size:12px; color:#333; text-decoration:none;}
+a:hover {color:#666; text-decoration:line-through;}
+
+.title {font-family: monospace, sans-serif; font-size:12px; color:#333; font-weight:bold;}
+.subtext {font-family: monospace, sans-serif; font-size:12px; color:#333; font-style:italic;}
+
+#pp {position:absolute; top:0px; left:0px; width:375px; border-top:1px solid #333;}
+/*#pp2 {position:absolute; top:0px; left:0px; width:375px; border-top:1px solid #333;}*/
+#sites {position:absolute; top:50px; left:0px; border-top:1px none white; width:200px;}
+#links {position:absolute; top:50px; left:100px; border-top:1px none white; width:200px;}
+#contact {position:absolute; top:50px; left:225px; border-top:1px none white; width:200px;}
+#news {position:absolute; top:175px; left:0px; width:375px; border-top:1px solid #333;}
