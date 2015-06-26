@@ -1,7 +1,11 @@
 body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
 h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 .breadcrumb-section,.breadcrumb,.breadcrumb a {display:none;background-color:transparent!important;border:0;margin-bottom:0!important;font-size:10px!important;color:#fff!important;position:absolute}
-
+.tag{
+  padding: 5px 15px;background: #E7E7EF;border-radius: .25em;border: 1px solid #fff;
+  color: white; font-weight: 700;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out
+}
+pre {background-color: #E7E7EF!important;border: 1px solid #fff!important;border-radius: 4px}
 /* Main */
 #content {min-height:900px;background:url('http://i1065.photobucket.com/albums/u381/jana2511/unsplash_Galymzhan%20Abdugalimov_notebook_zpsutsgzhc7.jpg');background-size:cover;background-repeat:no-repeat}
 #prodoverlay {text-align:center;min-height:650px;position:relative;top:40%}

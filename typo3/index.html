@@ -3,9 +3,13 @@
         <title>TYPO3 7.2 Bootstrap Templating</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../resources/js/pp.js" type="text/javascript" charset="utf-8"></script>
+
 
 <link rel="stylesheet" type="text/css" media="all" href="../resources/css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../resources/css/prettyPhoto.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
@@ -23,7 +27,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 /*images being shown default*/
 #content {min-height:900px;background:#E7E7EF;background-size:cover;background-repeat:no-repeat}
 .textbox{background:rgba(255,255,255,0.6);margin-top:30px;padding:60px 230px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out}
-.textbox:hover{background:rgba(255,255,255,0.2);}
+.textbox:hover{background:rgba(255,255,255,0.1);}
+.textbox:hover .tag{background:#9292A3!important}
+.textbox:hover pre{background-color: #DDDDE7!important;}
 </style>
 
     </head>
@@ -35,15 +41,19 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
           <div class="col-md-12 textbox">
             <h1>TYPO3 7.2 Bootstrap Templating</h1>
             <p>Custom template with backend layout so that even your average Joe can work with the content in the backend.</p>
-          </div>
+            <p>This is mainly to document how I achieved so as to memorize it since I don't work with TYPO3 all that much.</p>
+        </div>
         </div>
       </div>
+
+      <!--  <img src="http://haircare.berlin/img/typo3-theme-front.gif"> -->
+
 <!-- gifs-->
       <div class="container">
         <div class="row">
           <div class="col-md-12 textbox">
-            <h3>Heading</h3>
-      
+            <h3>Production</h3>
+
           </div>
         </div>
       </div>
@@ -51,13 +61,136 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 <div class="container">
   <div class="row">
     <div class="col-md-12 textbox">
-      <h3>Create TYPO3 fluid template</h3>
+      <h3>TYPO3 fluid template</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li><h4>Count the columns</h4>
+          <p>Decide how many column positions is needed.
+            Images with overlayed text have one column for image and one column for the overlay text.
+            Each column will have it's own box in backend layout:</p>
+            <div class="col-md-12">
+              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-images.png"><img src="../resources/img/TYPO3-images.png" class="img-responsive"><br>Images can be bigger BUT EQUAL PROPORTIONS.</a></div>
+              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-overlays.png"><img src="../resources/img/TYPO3-overlays.png"  class="img-responsive"><br>Text overlays as HTML elements with no further styling.</a></div>
+              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-void.png"><img src="../resources/img/TYPO3-void.png"  class="img-responsive"><br>What is not to be populated is left void.</a></div>
+            </div>
+            &nbsp;
+        </li>
+        <li>
+
+          <h4>TYPO3 fluid HTML frontend template</h4>
+          <p>HTML template file using fluid: uses namespace <pre>{namespace f=Tx_Fluid_ViewHelpers}</pre>
+          and The cObject-ViewHelper.</p>
+          <b>Markup</b>
+          <p>Tags marked <i>f:cObject</i> fall under the fluid namespace.
+            All the rest of it is interpreted as a regular HTML/plain text.</p>
+          <b>Template location</b>
+            <p>New file in <i>bootstrap_package/Resources/Private/Templates</i></p>
+          <b>Fastest way</b>
+            <p>Have a static HTML page, like <a terget="_blank" href="http://tarsiergraphics.com/demo/html/sailor2/">bootstrapzero templates or the like</a>.
+              Replace the content parts with columns fluid definitions.</p>
+              <p><pre>&lt;f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '200'}"/&gt;</pre></p>
+              <p>Column numbers can be whatever apart from 0,1,2,3 which are reserved for content, sidebars and border.
+                They don't have to be used at all though.</p>
+                &nbsp;
+        </li>
+        <li>
+          <h4>Backend Layout for that template</h4>
+          <p>Backend layout defines names of boxes in the backend (for orientation) and assigns a column number to the content in them.
+            If there is a frontend template defined for the specific page, content from the backend layout will only show up on the frontend if the HTML frontend template defines spaces for the respective column number that is populated in the backend.
+            Content undefined in HTML template won't show up.</p>
+            <b>Layout location</b>
+          <p>New file in <i>bootstrap_package/Configuration/PageTS/Mod/WebLayout</i> or easier in backend:
+            <br><br>
+            Web > Lists > "Root" > [+] > New Record: Backend layout
+            <br><br>
+            Edit the config field. Upload an icon 50x75px to be able to tell the new layout.
+            <p>
+              <b>Set the number of columns and rows and work it out colPos by colPos, as defined in HTML template.</b>
+          <p>Colspan defines the span - the number of cols ina row is defined by you:<br>
+            <pre>
+backend_layout {
+	colCount = 4
+	rowCount = 14
+	rows {
+  	1 {
+		columns {
+    		1 {
+  				name = CallToAction_MobileOnly
+  				colPos = 1000
+  				colspan = 4
+    				}
+  				}
+				}
+  	2 {
+  	columns {
+  			1 {
+  				name = Image_Top1
+  				colPos = 100
+  				colspan = 1
+  	  			}
+          ...
+          </pre>
+<br>
+The colspan and layout in general will only affect the box position in the backend - it's for the person who'll care of content only. The actuall appearance on frontent is set in HTML template.
+          </p>
+          &nbsp;
+        </li>
+        <li>
+          <h4>Bootstrap Package TYPO3 setup.txt</h4>
+          <p>Located in <i>bootstrap_package/Configuration/TypoScript</i></p>
+          <p>Lines 347-349, set the HTML template as the default one, the one to which the website will fallback.</p>
+          <pre>
+            default = TEXT
+            default.value = {$page.fluidtemplate.templateRootPath}MyHomeTemplate.html
+            default.insertData = 1
+          </pre>
+          <p>It won't be update-proof. This way there doesn't have to be explicit connection between backend layout and a HTML template.</p>
+          <span class="tag">• TO DO</span>
+         &nbsp;
+        </li>
+        <li>
+          <h4>CSS and JS definitions</h4>
+        <p>In Root's Typo Script record.</p>
+        <b>Page-specific CSS/JS import / based on page ID</b>
+        <p>
+        <pre>
+[globalVar = TSFE:id = 29]
+page {
+ headerData{
+  10 = TEXT
+  10.value = &lt;link rel="icon" type="image/png" href="fileadmin/ico/favicon.png" /&gt;
+
+  11 = TEXT
+  11{
+    field = subtitle // title
+    noTrimWrap = |&lt;title&gt;| Page title&lt;/title&gt;|
+    }
+   }
+  }
+  page.includeCSS {
+   file1 = fileadmin/templates/projects.css
+   file2 = fileadmin/templates/basic.css
+  }
+  page.includeJS {
+   file1 = fileadmin/templates/toggle.js
+  }
+  [global]
+        </pre>
+        <br>
+  General import (on all pages) is the same without the [global] directive.
+        </p>
+        &nbsp;
+      </li>
+      <li>
+    <h4>Setup</h4>
+    <p>Choose backend layout for a specific page in<br>
+      <br>
+      Web > Page > [pencil icon] > Apperance</p>
+      &nbsp;
+      </li>
+    <li><h4>Images don't have to be same size but they must be same proportions</h4>
+    <p>There is a crop tool in the backend.</p>
+    <span class="tag">• TO DO</span>
+    </li>
       </ul>
     </div>
   </div>
