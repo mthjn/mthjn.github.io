@@ -5,11 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../resources/js/pp.js" type="text/javascript" charset="utf-8"></script>
-
 
 <link rel="stylesheet" type="text/css" media="all" href="../resources/css/style.css" />
-<link rel="stylesheet" type="text/css" media="all" href="../resources/css/prettyPhoto.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../resources/css/litebox.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
@@ -31,7 +29,7 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 .textbox:hover{background:rgba(255,255,255,0.1);}
 .textbox:hover .tag{background:#9292A3!important}
 .textbox:hover pre{background-color: #DDDDE7!important;}
-
+ a {color:#6A6A88!important}a:hover{text-decoration:none}
 </style>
 
     </head>
@@ -55,10 +53,20 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
         <div class="row">
           <div class="col-md-12 textbox">
             <h3>Production</h3>
+            <div class="col-md-12">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <a class="lb" href="#lb1">
+                  <img src="../resources/img/TYPO3-7-eshop.png"  class="img-responsive"><br>Frontend</a></div>
+              <div class="col-md-4"></div>
+            </div>
+
 
           </div>
         </div>
       </div>
+
+
 <!-- Create template -->
 <div class="container">
   <div class="row">
@@ -70,9 +78,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
             Images with overlayed text have one column for image and one column for the overlay text.
             Each column will have it's own box in backend layout:</p>
             <div class="col-md-12">
-              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-images.png"><img src="../resources/img/TYPO3-images.png" class="img-responsive"><br>Images can be bigger BUT EQUAL PROPORTIONS.</a></div>
-              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-overlays.png"><img src="../resources/img/TYPO3-overlays.png"  class="img-responsive"><br>Text overlays as HTML elements with no further styling.</a></div>
-              <div class="col-md-4"><a rel="prettyPhoto"  href="../resources/img/TYPO3-void.png"><img src="../resources/img/TYPO3-void.png"  class="img-responsive"><br>What is not to be populated is left void.</a></div>
+              <div class="col-md-4"><a class="lb" href="#lb20"><img src="../resources/img/TYPO3-images.png" class="img-responsive"><br>Images can be bigger BUT EQUAL PROPORTIONS.</a></div>
+              <div class="col-md-4"><a class="lb" href="#lb21"><img src="../resources/img/TYPO3-overlays.png"  class="img-responsive"><br>Text overlays as HTML elements with no further styling.</a></div>
+              <div class="col-md-4"><a class="lb" href="#lb22"><img src="../resources/img/TYPO3-void.png"  class="img-responsive"><br>What is not to be populated is left void.</a></div>
             </div>
             &nbsp;
         </li>
@@ -199,5 +207,25 @@ page {
 </div>
 <!-- home button -->
 <div id="home"><a href="/">HOME</a></div>
+
+<div class="lbt" id="lb1">
+  <img src="../resources/img/TYPO3-7-eshop.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+<div class="lbt" id="lb20">
+  <img src="../resources/img/TYPO3-images.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+
+<div class="lbt" id="lb21">
+  <img src="../resources/img/TYPO3-overlays.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+<div class="lbt" id="lb22">
+  <img src="../resources/img/TYPO3-void.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+
+
     </body>
 </html>
