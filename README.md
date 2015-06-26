@@ -5,4 +5,4 @@
 ###### [TYPO3 comp. jQuery Switch Box](http://mthjn.github.io/box/)  
 ###### [CSS3 Image Preloader & Background Image switcher](http://mthjn.github.io/image-preload/)  
 
-VM("https://vimeo.com/131687627", print = TRUE)
+
