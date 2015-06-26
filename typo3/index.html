@@ -11,10 +11,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
-<script>
-console.log( "aye ready!" );
-</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 
 <style media="screen">
 /*generals*/
@@ -30,8 +28,20 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
 .textbox:hover .tag{background:#9292A3!important}
 .textbox:hover pre{background-color: #DDDDE7!important;}
  a {color:#6A6A88!important}a:hover{text-decoration:none}
-</style>
 
+ /*gif bg */
+.theme-front, .theme-back,.image-resize{background:rgba(255,255,255,0.6);margin-top: 30px;padding: 100px 230px;transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;background-size: cover;}
+.theme-front {background-image: url(http://haircare.berlin/img/typo3-theme-front.gif)}
+.theme-back {background-image: url(http://haircare.berlin/img/typo3-theme-back.gif)}
+.image-resize {background-image: url(http://haircare.berlin/img/typo3-image-resize.gif)}
+.theme-front > p, .theme-back > p, .image-resize > p  {
+  color:white;
+  text-align:center;
+  padding: 5%;
+  background:rgba(0,0,0,0.4);
+}
+</style>
+<script>console.log( "aye ready!" );</script>
     </head>
     <body>
      <div id="content">
@@ -52,20 +62,18 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
       <div class="container">
         <div class="row">
           <div class="col-md-12 textbox">
-            <h3>Production</h3>
+            <h3 style="text-align:center">Production</h3>
             <div class="col-md-12">
-              <div class="col-md-4"></div>
-              <div class="col-md-4">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
                 <a class="lb" href="#lb1">
-                  <img src="../resources/img/TYPO3-7-eshop.png"  class="img-responsive"><br>Frontend</a></div>
-              <div class="col-md-4"></div>
+                  <img src="../resources/img/TYPO3-7-eshop-thumb.png"  class="img-responsive"><br><small>Frontend</small></a></div>
+              <div class="col-md-1"></div>
             </div>
-
-
+            <p style="text-align:center">For more look at the <a href="#down">bottom</a>.</p>
           </div>
         </div>
       </div>
-
 
 <!-- Create template -->
 <div class="container">
@@ -78,9 +86,9 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
             Images with overlayed text have one column for image and one column for the overlay text.
             Each column will have it's own box in backend layout:</p>
             <div class="col-md-12">
-              <div class="col-md-4"><a class="lb" href="#lb20"><img src="../resources/img/TYPO3-images.png" class="img-responsive"><br>Images can be bigger BUT EQUAL PROPORTIONS.</a></div>
-              <div class="col-md-4"><a class="lb" href="#lb21"><img src="../resources/img/TYPO3-overlays.png"  class="img-responsive"><br>Text overlays as HTML elements with no further styling.</a></div>
-              <div class="col-md-4"><a class="lb" href="#lb22"><img src="../resources/img/TYPO3-void.png"  class="img-responsive"><br>What is not to be populated is left void.</a></div>
+              <div class="col-md-4"><a class="lb" href="#lb20"><img src="../resources/img/TYPO3-images-thumb.png" class="img-responsive"><br><small>Images can be bigger BUT EQUAL PROPORTIONS.</small></a></div>
+              <div class="col-md-4"><a class="lb" href="#lb21"><img src="../resources/img/TYPO3-overlays-thumb.png"  class="img-responsive"><br><small>Text overlays as HTML elements with no further styling.</small></a></div>
+              <div class="col-md-4"><a class="lb" href="#lb22"><img src="../resources/img/TYPO3-void-thumb.png"  class="img-responsive"><br><small>What is not to be populated is left void.</small></a></div>
             </div>
             &nbsp;
         </li>
@@ -195,6 +203,11 @@ page {
     <p>Choose backend layout for a specific page in<br>
       <br>
       Web > Page > [pencil icon] > Apperance</p>
+    <div class="col-md-12">
+      <div class="col-md-4"></div>
+      <div class="col-md-4"><img src="../resources/img/icons.png" class="img-responsive"></div>
+      <div class="col-md-4"></div>
+    </div>
       &nbsp;
       </li>
     <li><h4>Images don't have to be same size but they must be same proportions</h4>
@@ -205,6 +218,34 @@ page {
     </div>
   </div>
 </div>
+<!-- gif bg -->
+<div class="container" id="down">
+  <div class="row"><a href="https://vimeo.com/131853197" target="_blank">
+    <div class="theme-front">
+      <p>TYPO3 Bootstrap frontend tour</p>
+    </div></a>
+  </div>
+</div>
+<!-- gif bg -->
+<div class="container">
+  <div class="row"><a href="https://vimeo.com/131853196" target="_blank">
+    <div class="theme-back">
+      <p>TYPO3 7.2 Backend</p>
+    </div></a>
+  </div>
+</div>
+<!-- gif bg -->
+<div class="container">
+  <div class="row"><a href="https://vimeo.com/131853198" target="_blank">
+    <div class="image-resize">
+      <p>TYPO3 image resize tool in the backend</p>
+    </div></a>
+  </div>
+</div>
+&nbsp;
+&nbsp;
+&nbsp;
+
 <!-- home button -->
 <div id="home"><a href="/">HOME</a></div>
 
