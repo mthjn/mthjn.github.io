@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>TYPO3 7.2 Bootstrap Templating</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--tabs -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../resources/css/tabs.css">
+
+<link rel="stylesheet" type="text/css" media="all" href="../resources/css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="../resources/css/litebox.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+
+<style media="screen">
+/*generals*/
+body {font-family:sans-serif;transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out}
+h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
+/*design*/
+#prodoverlay {text-align:center;min-height:650px;position:relative;top:40%}
+/*images being shown default*/
+#content {min-height:900px;background:#E7E7EF;background-size:cover;background-repeat:no-repeat}
+/*typo3*/
+.textbox{background:rgba(255,255,255,0.6);margin-top:30px;padding:60px 230px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out}
+.textbox:hover{background:rgba(255,255,255,0.1);}
+.textbox:hover .tag{background:#9292A3!important}
+.textbox:hover pre{background-color: #DDDDE7!important;}
+ a {color:#6A6A88!important}a:hover{text-decoration:none}
+ /*gif bg */
+.theme-front, .theme-back,.image-resize{background:rgba(255,255,255,0.6);margin-top: 30px;padding: 100px 230px;transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;background-size: cover;}
+.theme-front {background-image: url(http://haircare.berlin/img/typo3-theme-front.gif)}
+.theme-back {background-image: url(http://haircare.berlin/img/typo3-theme-back.gif)}
+.image-resize {background-image: url(http://haircare.berlin/img/typo3-image-resize.gif)}
+.theme-front > p, .theme-back > p, .image-resize > p  {
+  color:white;
+  text-align:center;
+  padding: 5%;
+  background:rgba(0,0,0,0.4);
+}
+</style>
+<script>
+  $(function() {
+    $( "#tabs" ).tabs({
+      collapsible: true
+    });
+    $(".tab-content").hide();
+    $(".ui-tabs-active").removeClass("ui-tabs-active");
+    $(".ui-state-active").removeClass("ui-state-active");
+        $(".ui-tabs-anchor").click(function() {
+            $($(this).attr("href") + " .tab-content").first().show();
+            });
+  });
+  console.log( "aye ready!" );
+  </script>
+</head>
+<body>
+  <div id="content">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 textbox">
+            <div id="tabs">
+              <ul>
+                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                <li><a href="#tabs-2">Proin dolor 2</a></li>
+                <li><a href="#tabs-3">Aenean lacinia 3</a></li>
+              </ul>
+              <div id="tabs-1">
+                <div class="tab-content">
+                <p><strong>Click this tab again to close the content pane.1</strong></p>
+                <p>111111.</p>
+                </div>
+              </div>
+              <div id="tabs-2">
+                <div class="tab-content">
+                <p><strong>Click this tab again to close the content pane.2</strong></p>
+                <p>IDK. Ur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                </div>
+              </div>
+              <div id="tabs-3">
+                <div class="tab-content">
+                <p><strong>Click this tab again to close the content pane.3</strong></p>
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                </div>
+              </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+    </div>
+ </body>
+</html>

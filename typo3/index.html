@@ -3,8 +3,11 @@
         <title>TYPO3 7.2 Bootstrap Templating</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--tabs -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../resources/css/tabs.css">
 
 <link rel="stylesheet" type="text/css" media="all" href="../resources/css/style.css" />
 <link rel="stylesheet" type="text/css" media="all" href="../resources/css/litebox.css" />
@@ -40,8 +43,21 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
   background:rgba(0,0,0,0.4);
 }
 </style>
-<script>console.log( "aye ready!" );</script>
-    </head>
+<script>
+  $(function() {
+    $( "#tabs" ).tabs({
+      collapsible: true
+    });
+    $(".tab-content").hide();
+    $(".ui-tabs-active").removeClass("ui-tabs-active");
+    $(".ui-state-active").removeClass("ui-state-active");
+        $(".ui-tabs-anchor").click(function() {
+            $($(this).attr("href") + " .tab-content").first().show();
+            });
+  });
+  console.log( "aye ready!" );
+</script>
+  </head>
     <body>
      <div id="content">
 
@@ -60,22 +76,36 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
           <div class="col-md-12 textbox">
             <h3 style="text-align:center">Production</h3>
             <div class="col-md-12">
-              <div class="col-md-1"></div>
-              <div class="col-md-10">
+              <div class="col-md-4">
+                <h4 style="text-align:center">The look of it</h4>
+                <p style="text-align:center">
+                  <span class="tag">
+                    <a href="#down">Take a look inside</a>
+                  </span>
+                </p>
+              </div>
+              <div class="col-md-4">
                 <a class="lb" href="#lb1">
-                  <img src="../resources/img/TYPO3-7-eshop-thumb.png"  class="img-responsive"><br><small>Frontend</small></a></div>
-              <div class="col-md-1"></div>
+                  <img src="../resources/img/TYPO3-7-eshop-thumb.png"  class="img-responsive">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h4 style="text-align:center">Repository</h4>
+                  <p style="text-align:center">
+                    <a href="https://github.com/mthjn/typo3/tree/master/Typo3_Templating">
+                      <span class="tag">TYPO3 TEMPLATING</span>
+                    </a>
+                  </p>
+              </div>
+
             </div>
-            <p style="text-align:center">For more look at the <a href="#down">bottom</a>.</p>
           </div>
         </div>
-      </div>
-
 <!-- Create template -->
 <div class="container">
   <div class="row">
     <div class="col-md-12 textbox">
-      <h3>TYPO3 fluid template</h3>
+      <h3 style="text-align:center">TYPO3 fluid template</h3>
       <ul>
         <li><h4>Count the columns</h4>
           <p>Decide how many column positions is needed.
@@ -214,47 +244,55 @@ page {
     </div>
   </div>
 </div>
-<!-- gifs-->
-      <div class="container">
+<!--gibs tabs-->
+      <div class="container" id="down">
         <div class="row">
-          <div class="col-md-12 textbox" style="text-align:center">
-            <h3 style="text-align:center">Repository</h3>
-            <a href="https://github.com/mthjn/typo3/tree/master/Typo3_Templating"><span class="tag">TYPO3 TEMPLATING</span></a>
-          </div>
-        </div>
-      </div>
+          <div class="col-md-12 textbox">
+            <div id="tabs">
+              <ul>
+                <li><a href="#tabs-1">FrontEnd Tour</a></li>
+                <li><a href="#tabs-2">Backend Tour</a></li>
+                <li><a href="#tabs-3">Image Crop Tool</a></li>
+              </ul>
+              <div id="tabs-1">
+                <div class="tab-content">
+                  <div class="row"><a href="https://vimeo.com/131853197" target="_blank">
+                    <div class="theme-front">
+                      <p>TYPO3 Bootstrap frontend tour</p>
+                    </div></a>
+                  </div>
+                </div>
+              </div>
+              <div id="tabs-2">
+                <div class="tab-content">
+                  <div class="row"><a href="https://vimeo.com/131853196" target="_blank">
+                    <div class="theme-back">
+                      <p>TYPO3 7.2 Backend</p>
+                    </div></a>
+                  </div>
+                </div>
+              </div>
+              <div id="tabs-3">
+                <div class="tab-content">
+                  <div class="row"><a href="https://vimeo.com/131853198" target="_blank">
+                    <div class="image-resize">
+                      <p>TYPO3 image crop tool in the backend</p>
+                    </div></a>
+                  </div>
+                </div>
+              </div>
+             </div>
+           </div>
+         </div>
+       </div>
 
-<!-- gif bg -->
-<div class="container" id="down">
-  <div class="row"><a href="https://vimeo.com/131853197" target="_blank">
-    <div class="theme-front">
-      <p>TYPO3 Bootstrap frontend tour</p>
-    </div></a>
-  </div>
-</div>
-<!-- gif bg -->
-<div class="container">
-  <div class="row"><a href="https://vimeo.com/131853196" target="_blank">
-    <div class="theme-back">
-      <p>TYPO3 7.2 Backend</p>
-    </div></a>
-  </div>
-</div>
-<!-- gif bg -->
-<div class="container">
-  <div class="row"><a href="https://vimeo.com/131853198" target="_blank">
-    <div class="image-resize">
-      <p>TYPO3 image crop tool in the backend</p>
-    </div></a>
-  </div>
-</div>
 &nbsp;
 &nbsp;
 &nbsp;
 
 <!-- home button -->
 <div id="home"><a href="/">HOME</a></div>
-
+<!-- light boxes -->
 <div class="lbt" id="lb1">
   <img src="../resources/img/TYPO3-7-eshop.png"/>
   <a class="lbc" href="#"></a>
@@ -263,7 +301,6 @@ page {
   <img src="../resources/img/TYPO3-images.png"/>
   <a class="lbc" href="#"></a>
 </div>
-
 <div class="lbt" id="lb21">
   <img src="../resources/img/TYPO3-overlays.png"/>
   <a class="lbc" href="#"></a>
@@ -272,7 +309,5 @@ page {
   <img src="../resources/img/TYPO3-void.png"/>
   <a class="lbc" href="#"></a>
 </div>
-
-
     </body>
 </html>
