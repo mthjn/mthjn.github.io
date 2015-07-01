@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 
 <style media="screen">
 /*generals*/
@@ -52,38 +54,257 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
         $(".ui-tabs-anchor").click(function() {
             $($(this).attr("href") + " .tab-content").first().show();
             });
+    $( "#templating" ).tabs({
+        collapsible: true
+    });
   });
   console.log( "aye ready!" );
-  </script>
-</head>
-<body>
-  <div id="content">
+</script>
+  </head>
+    <body>
+     <div id="content">
 
       <div class="container">
         <div class="row">
           <div class="col-md-12 textbox">
+            <h2 class="main">TYPO3 7.2 Bootstrap Templating</h1>
+            <p>Custom template with backend layout so that even your average Joe can work with the content in the backend.</p>
+            <p>This is mainly to document how I achieved that so as to memorize it since I don't work with TYPO3 all that much.</p>
+        </div>
+        </div>
+      </div>
+<!-- gifs-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 textbox">
+            <h3 style="text-align:center">Production</h3>
+            <div class="col-md-12">
+              <div class="col-md-4">
+                <h4 style="text-align:center">The look of it</h4>
+                <p style="text-align:center">
+                  <span class="tag">
+                    <a href="#down">Take a look inside</a>
+                  </span>
+                </p>
+              </div>
+              <div class="col-md-4">
+                <a class="lb" href="#lb1">
+                  <img src="../resources/img/TYPO3-7-eshop-thumb.png"  class="img-responsive">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h4 style="text-align:center">Repository</h4>
+                  <p style="text-align:center">
+                    <a href="https://github.com/mthjn/typo3/tree/master/Typo3_Templating">
+                      <span class="tag">TYPO3 TEMPLATING</span>
+                    </a>
+                  </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+<!-- Create template -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 textbox">
+      <h3 style="text-align:center">TYPO3 fluid template</h3>
+
+<div id="templating"><!-- tabs -->
+<div class="col-md-4">
+  <ul>
+    <li><a href="#template1">Custom Columns</a></li>
+    <li><a href="#template2">Frontend template</a></li>
+    <li><a href="#template3">Backend Layout</a></li>
+    <li><a href="#template4">Setup.txt</a></li>
+    <li><a href="#template5">CSS&JS</a></li>
+    <li><a href="#template6">SetUp&ToDo</a></li>
+  </ul>
+</div>
+<div class="col-md-8">
+<div id="template1">
+  <h4>Count the columns</h4>
+  <p>Decide how many column positions is needed.
+  Images with overlayed text have one column for image and one column for the overlay text.
+  Each column will have it's own box in backend layout:</p>
+  <div class="col-md-12">
+    <div class="col-md-4"><a class="lb" href="#lb20"><img src="../resources/img/TYPO3-images-thumb.png" class="img-responsive"><br><small>Images can be bigger BUT EQUAL PROPORTIONS.</small></a></div>
+    <div class="col-md-4"><a class="lb" href="#lb21"><img src="../resources/img/TYPO3-overlays-thumb.png"  class="img-responsive"><br><small>Text overlays as HTML elements with no further styling.</small></a></div>
+    <div class="col-md-4"><a class="lb" href="#lb22"><img src="../resources/img/TYPO3-void-thumb.png"  class="img-responsive"><br><small>What is not to be populated is left void.</small></a></div>
+  </div>
+  &nbsp;
+</div>
+<div id="template2">
+  <h4>TYPO3 fluid HTML frontend template</h4>
+        <p>HTML template file using fluid: uses namespace <pre>{namespace f=Tx_Fluid_ViewHelpers}</pre>
+        and The cObject-ViewHelper.</p>
+        <b>Markup</b>
+        <p>Tags marked <i>f:cObject</i> fall under the fluid namespace.
+          All the rest of it is interpreted as a regular HTML/plain text.</p>
+    <b>Template location</b>
+   <p>New file in <i>bootstrap_package/Resources/Private/Templates</i></p>
+    <b>Fastest way</b>
+    <p>Have a static HTML page, like <a terget="_blank" href="http://tarsiergraphics.com/demo/html/sailor2/">bootstrapzero templates or the like</a>.
+    Replace the content parts with columns fluid definitions.</p>
+    <p><pre>&lt;f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '200'}"/&gt;</pre></p>
+    <p>Column numbers can be whatever apart from 0,1,2,3 which are reserved for content, sidebars and border.
+    They don't have to be used at all though.</p>
+  &nbsp;
+</div>
+<div id="template3">
+        <h4>Backend Layout for that template</h4>
+        <p>Backend layout defines names of boxes in the backend (for orientation) and assigns a column number to the content in them.
+          If there is a frontend template defined for the specific page, content from the backend layout will only show up on the frontend if the HTML frontend template defines spaces for the respective column number that is populated in the backend.
+          Content undefined in HTML template won't show up.</p>
+          <b>Layout location</b>
+        <p>New file in <i>bootstrap_package/Configuration/PageTS/Mod/WebLayout</i> or easier in backend:
+          <br><br>
+          Web > Lists > "Root" > [+] > New Record: Backend layout
+          <br><br>
+          Edit the config field. Upload an icon 50x75px to be able to tell the new layout.
+          <p>
+            <b>Set the number of columns and rows and work it out colPos by colPos, as defined in HTML template.</b>
+        <p>Colspan defines the span - the number of cols ina row is defined by you:<br>
+          <pre>
+        backend_layout {
+        colCount = 4
+        rowCount = 14
+        rows {
+        1 {
+        columns {
+        1 {
+        name = CallToAction_MobileOnly
+        colPos = 1000
+        colspan = 4
+          }
+        }
+        }
+        2 {
+        columns {
+        1 {
+        name = Image_Top1
+        colPos = 100
+        colspan = 1
+          }
+        ...
+        </pre>
+        <br>
+        The colspan and layout in general will only affect the box position in the backend - it's for the person who'll care of content only. The actuall appearance on frontent is set in HTML template.
+        </p>
+        &nbsp;
+</div>
+<div id="template4">
+  <h4>Bootstrap Package TYPO3 setup.txt</h4>
+  <p>Located in <i>bootstrap_package/Configuration/TypoScript</i></p>
+  <p>Lines 347-349, set the HTML template as the default one, the one to which the website will fallback.</p>
+  <pre>
+    default = TEXT
+    default.value = {$page.fluidtemplate.templateRootPath}MyHomeTemplate.html
+    default.insertData = 1
+  </pre>
+  <p>It won't be update-proof. This way there doesn't have to be explicit connection between backend layout and a HTML template.</p>
+  <span class="tag">• TO DO</span>
+ &nbsp;
+</div>
+<div id="template5">
+  <h4>CSS and JS definitions</h4>
+  <p>In Root's Typo Script record.</p>
+   <b>Page-specific CSS/JS import / based on page ID</b>
+    <p>
+    <pre>
+    [globalVar = TSFE:id = 29]
+    page {
+    headerData{
+    10 = TEXT
+    10.value = &lt;link rel="icon" type="image/png" href="fileadmin/ico/favicon.png" /&gt;
+
+    11 = TEXT
+    11{
+    field = subtitle // title
+    noTrimWrap = |&lt;title&gt;| Page title&lt;/title&gt;|
+    }
+    }
+    }
+    page.includeCSS {
+    file1 = fileadmin/templates/projects.css
+    file2 = fileadmin/templates/basic.css
+    }
+    page.includeJS {
+    file1 = fileadmin/templates/toggle.js
+    }
+    [global]
+    </pre>
+   <br>
+    General import (on all pages) is the same without the [global] directive.
+   </p>
+   &nbsp;
+</div>
+<div id="template6">
+  <h4>Setup</h4>
+  <p>Choose backend layout for a specific page in<br>
+    <br>
+    Web > Page > [pencil icon] > Apperance</p>
+  <div class="col-md-12">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"><img src="../resources/img/icons.png" class="img-responsive"></div>
+    <div class="col-md-4"></div>
+  </div>
+    &nbsp;
+  <h4>Images don't have to be same size but they must be of equal proportions</h4>
+  <p>There is a crop tool in the backend.</p>
+  <span class="tag">• TO DO</span>
+</div>
+ </div>
+</div><!-- tabs-->
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+<!--gibs tabs-->
+      <div class="container" id="down">
+        <div class="row">
+          <div class="col-md-12 textbox">
             <div id="tabs">
               <ul>
-                <li><a href="#tabs-1">Nunc tincidunt</a></li>
-                <li><a href="#tabs-2">Proin dolor 2</a></li>
-                <li><a href="#tabs-3">Aenean lacinia 3</a></li>
+                <li><a href="#tabs-1">FrontEnd Tour</a></li>
+                <li><a href="#tabs-2">Backend Tour</a></li>
+                <li><a href="#tabs-3">Image Crop Tool</a></li>
               </ul>
               <div id="tabs-1">
                 <div class="tab-content">
-                <p><strong>Click this tab again to close the content pane.1</strong></p>
-                <p>111111.</p>
+                  <div class="row"><a href="https://vimeo.com/131853197" target="_blank">
+                    <div class="theme-front">
+                      <p>TYPO3 Bootstrap frontend tour</p>
+                    </div></a>
+                  </div>
                 </div>
               </div>
               <div id="tabs-2">
                 <div class="tab-content">
-                <p><strong>Click this tab again to close the content pane.2</strong></p>
-                <p>IDK. Ur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                  <div class="row"><a href="https://vimeo.com/131853196" target="_blank">
+                    <div class="theme-back">
+                      <p>TYPO3 7.2 Backend</p>
+                    </div></a>
+                  </div>
                 </div>
               </div>
               <div id="tabs-3">
                 <div class="tab-content">
-                <p><strong>Click this tab again to close the content pane.3</strong></p>
-                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+                  <div class="row"><a href="https://vimeo.com/131853198" target="_blank">
+                    <div class="image-resize">
+                      <p>TYPO3 image crop tool in the backend</p>
+                    </div></a>
+                  </div>
                 </div>
               </div>
              </div>
@@ -91,6 +312,28 @@ h1,h2,h3,h4,h5,h6,p{font-family:sans-serif}
          </div>
        </div>
 
-    </div>
- </body>
+&nbsp;
+&nbsp;
+&nbsp;
+
+<!-- home button -->
+<div id="home"><a href="/">HOME</a></div>
+<!-- light boxes -->
+<div class="lbt" id="lb1">
+  <img src="../resources/img/TYPO3-7-eshop.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+<div class="lbt" id="lb20">
+  <img src="../resources/img/TYPO3-images.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+<div class="lbt" id="lb21">
+  <img src="../resources/img/TYPO3-overlays.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+<div class="lbt" id="lb22">
+  <img src="../resources/img/TYPO3-void.png"/>
+  <a class="lbc" href="#"></a>
+</div>
+    </body>
 </html>

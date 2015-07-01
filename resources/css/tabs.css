@@ -799,7 +799,7 @@ button.ui-button::-moz-focus-inner {
 }
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
 	float: left;
-	padding: 1.5em 2em;
+	padding: 1.5em 1em;
 	text-decoration: none;
 	font-size: 12px;
 	color: #4F4F68 !important;
@@ -878,7 +878,18 @@ body .ui-tooltip {
 	background: #E7E7EF 50% 50% repeat-x;
 	font-weight: normal;
 	color: #4F4F68;
+	outline: 0;
 }
+	#templating .ui-state-default,
+	#templating .ui-widget-content .ui-state-default,
+	#templating .ui-widget-header .ui-state-default {
+	border: 0px solid #d3d3d3;
+	background: #E7E7EF 50% 50% repeat-x;
+	font-weight: normal;
+	color: #4F4F68;
+	width: 80%;
+	outline: 0;
+	}
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
@@ -911,7 +922,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
 	border: 0px solid #aaaaaa;
-	background: #ffffff 50% 50% repeat-x;
+	background: #ffffff!important;
 	font-weight: normal;
 	color: #212121;
 }
