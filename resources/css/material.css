@@ -1,0 +1,135 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
+body{background:#e7e7ef;font-family:"Lato";font-weight:400;text-align:center;color:#fff}
+h1,h2,h3,h4,h5,h6{color:#fff;margin-top: 0;}
+a, a:hover {color:#80808C;text-decoration:none}
+
+.panel{background:#80808C;border-radius:0;margin: 0;
+  position: relative;z-index: 10;}
+/*.panel-bottom{background:#C1C1D0;border-radius:0;padding:10px;margin: 0;}*/
+.header{height:150px;background-image:url("img/2-xs.png");
+background-size:cover;background-position:center;box-shadow: 1px 2px 1px rgba(0,0,0,0.4)}
+
+.important > div {color: rgb(231, 231, 239);text-align:left;padding-left: 20px;}
+
+.pane{position:relative;width: 100%;margin: 30px 0px 20px 0px;height: 250px;padding: 30px 20px;
+text-align: center;background-color: rgb(245, 245, 255);cursor:pointer;
+transition:all 0.2s ease-in-out}
+.pane:hover{box-shadow: 0px 10px 15px rgba(0,0,0,0.4);top: -15px;}
+.pane h2, .pane h3, .pane h4, .pane h5, .pane h6, .pane p{color:#80808C}
+
+.dark{background:#80808C;color:white;margin:0;width:100%;padding:50px}
+
+.padded{padding:10px}
+
+.menu > div{padding:20px 10px;background:#80808C;transition:all 0.4s ease-in-out}
+.menu > div > a, .menu > div > a:hover {color: rgb(245, 245, 255)}
+.menu > div:hover {cursor:pointer;background:#9494A0}
+
+.glyphicon {font-size: 50px;color:#80808C;margin-bottom: 20px;}
+
+.btn-flat {background: none;border-radius:0;border:1px solid #B0B0C0;box-shadow: none}
+
+/* litebox */
+.lbt{z-index:11;background:none;-webkit-transform-origin:bottom;transform-origin:bottom}
+a.lbc{padding:8px;background: rgb(185, 62, 75);color: white!important;bottom:0!important;}
+.lbt img,.lbt > div, a.lbc{box-shadow: 1px 15px 20px rgba(0,0,0,0.4);border:0}
+.lbt h2 {color:#80808C!important;}
+.lbt > div{background:white;color:#80808C!important;position: absolute;top: 30%;left: 30%;padding: 20px;}
+
+@media(max-width:300px){
+  .padded{padding:2px}
+  .dark{padding:2px}
+}
+@media(min-width:970px){
+  .header{height:250px;background-image:url("img/2.png")}
+  .padded{padding:50px}
+}
+.visible-xs-block{background:#80808C}
+/*test*/
+.wrapper {
+background-color: #ff7a7a;
+display: inline-block;
+padding: 20px;
+overflow: hidden;
+}
+.wrapper:hover {
+cursor: pointer;
+}
+.wrapper:hover .button-two:after {
+-webkit-transform: scale(1) translateZ(0);
+-moz-transform: scale(1) translateZ(0);
+-ms-transform: scale(1) translateZ(0);
+-o-transform: scale(1) translateZ(0);
+transform: scale(1) translateZ(0);
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+
+[class*="button"] {
+color: rgb(245, 245, 255);
+position: relative;
+z-index: 10;
+}
+[class*="button"]:after {
+content: "";
+width: 150%;
+height: 0;
+padding-top: 150%;
+object-fit: contain;
+background-color: #80808C;
+position: absolute;
+top: 50%;
+left: 50%;
+margin: -75%;
+opacity: 1;
+border-radius: 50%;
+-webkit-transform: scale(0) translateZ(0);
+-moz-transform: scale(0) translateZ(0);
+-ms-transform: scale(0) translateZ(0);
+-o-transform: scale(0) translateZ(0);
+transform: scale(0) translateZ(0);
+-webkit-transition: all 0.2s ease;
+-moz-transition: all 0.2s ease;
+transition: all 0.2s ease;
+z-index: -1;
+}
+
+.button-one:after {
+-webkit-animation: scaler 1.5s ease infinite alternate;
+-moz-animation: scaler 1.5s ease infinite alternate;
+animation: scaler 1.5s ease infinite alternate;
+}
+
+@-webkit-keyframes scaler {
+0%, 50% {
+  -webkit-transform: scale(0) translateZ(0);
+}
+100% {
+  -webkit-transform: scale(1) translateZ(0);
+}
+}
+@-moz-keyframes scaler {
+0%, 50% {
+  -moz-transform: scale(0) translateZ(0);
+}
+100% {
+  -moz-transform: scale(1) translateZ(0);
+}
+}
+@keyframes scaler {
+0%, 50% {
+  -webkit-transform: scale(0) translateZ(0);
+  -moz-transform: scale(0) translateZ(0);
+  -ms-transform: scale(0) translateZ(0);
+  -o-transform: scale(0) translateZ(0);
+  transform: scale(0) translateZ(0);
+}
+100% {
+  -webkit-transform: scale(1) translateZ(0);
+  -moz-transform: scale(1) translateZ(0);
+  -ms-transform: scale(1) translateZ(0);
+  -o-transform: scale(1) translateZ(0);
+  transform: scale(1) translateZ(0);
+}
+}
