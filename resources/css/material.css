@@ -6,7 +6,7 @@ a, a:hover {color:#80808C;text-decoration:none}
 .panel{background:#80808C;border-radius:0;margin: 0;
   position: relative;z-index: 10;}
 /*.panel-bottom{background:#C1C1D0;border-radius:0;padding:10px;margin: 0;}*/
-.header{height:150px;background-image:url("../resources/img/2-xs.png");
+.header{height:150px;background-image:url("http://mthjn.github.io/resources/img/2-xs.png");
 background-size:cover;background-position:center;box-shadow: 1px 2px 1px rgba(0,0,0,0.4)}
 
 .important > div {color: rgb(231, 231, 239);text-align:left;padding-left: 20px;}
@@ -41,7 +41,7 @@ a.lbc{padding:8px;background: rgb(185, 62, 75);color: white!important;bottom:0!i
   .dark{padding:2px}
 }
 @media(min-width:970px){
-  .header{height:250px;background-image:url("../resources/img/2.png")}
+  .header{height:250px;background-image:url("http://mthjn.github.io/resources/img/2.png")}
   .padded{padding:50px}
 }
 .visible-xs-block{background:#80808C}
