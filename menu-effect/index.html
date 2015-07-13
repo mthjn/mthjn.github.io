@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <link href='https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css' rel='stylesheet'>
+    <title>Blog / Material Design</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet'>
+    <style>
+      body{font-family:Roboto;-webkit-transition: all 800ms ease-in-out;transition: all  800ms ease-in-out;}
+      a{text-decoration:none;color:white}
+      .wrap{width:100%;text-align:center}
+      .innerwrap{width:auto; margin:0 auto;display: inline-block;}
+      .left{width:15%;float:left;min-width:200px}
+      .right{width:55%;float:left;margin-top:16px;margin-left: 15px;min-width:600px}
+      li{list-style-type: none}
+      .menuprod a {overflow:hidden!important}
+      #karr a{width:auto!important;font-size:11px;line-height:57px;font-weight:500;;padding: 0 5%;}
+      #karr a:before{display: none}
+      #karr>li{-webkit-transition: all 500ms ease-in-out;transition: all  500ms ease-in-out;}
+      #karr>li:nth-child(odd){background:#ddd}
+      #karr>li:nth-child(even){background:#e6e6e6}
+      #karr li:hover{
+      background-image: url('olay.png');
+      background-size: cover;background-position-x: right;
+      background-repeat: no-repeat }
+      @media(max-width:1200px) {#karr a{line-height:47px;font-size:10px!important}}
+      @media(max-width:770px) { #karr a {font-size:12px}
+      ul>li {width:100%}
+      #box{min-width:100%;margin:0}
+      #karr{padding:0}
+      }
+      @media(min-width:1200px) { #karr a {font-size:13px} }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+      renderHeight();
+      });
+      window.addEventListener("resize", function() {
+      renderHeight();
+      });
+      function renderHeight() {
+        var menu = document.getElementById("karr");
+        var box = document.getElementById("box");
+        var mh = menu.offsetHeight;
+        var bh = box.offsetHeight;
+        box.style.height = mh + "px";
+      }
+    </script>
+  </head>
+  <body>
+    <div class='wrap'>
+      <div class='innerwrap'>
+        <div class='left white'>
+          <ul class='white' id='karr'>
+            <li>
+              <a href='#'>Velvet Underground</a>
+            </li>
+            <li>
+              <a href='#'>Patti Smith & Band</a>
+            </li>
+            <li>
+              <a href='#'>The Rolling Stones</a>
+            </li>
+            <li>
+              <a href='#'>Hello, I'm Johnny Cash</a>
+            </li>
+            <li>
+              <a href='#'>June Carter indeed</a>
+            </li>
+          </ul>
+        </div>
+        <div class='right teal bg-silver' id='box'>
+          <p class='white'>here be whatever</p>
+          <p class='gray'>--- sliding menu overlay ---</p>
+          <p>created with vanilla CSS/JS and a bit of material-ish colors.</p>
+          <p>note that the purple image that appears on hover ( as the overlay ) must be larger than the box. otherwise it won't slide.</p>
+          <p><u>used:</u> <a href="https://github.com/mrmrs/colors">smart web default colors</a></p>
+          <p><u>and:</u> <a href="https://github.com/mthjn/All-Frontend-Shit/blob/master/ResizeDivDynamicallyJavascript/ResizeDivDynamically.js">vanJS div responsivity</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
