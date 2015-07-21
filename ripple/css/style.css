@@ -1,0 +1,161 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: #39CCCC;
+  font-family: "Open Sans", "Arial", sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  padding: 50px 0;
+  color: #ddd;
+}
+
+/**
+ * Object: Divider
+ * --------------------------------------------------
+ */
+.o-divider {
+  border: 0;
+  margin: 20px;
+  height: 1px;
+  background: #656D78;
+}
+
+/**
+ * Component: Button
+ * --------------------------------------------------
+ */
+.c-button {
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0;
+  vertical-align: middle;
+  overflow: visible;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  background: transparent;
+  border: 0;
+  user-select: none;
+  box-shadow: 2px 2px 0 0 #383e46;
+  transition: all 0.2s ease;
+}
+
+.c-button:hover,
+.c-button:focus {
+  outline: 0;
+  text-decoration: none;
+}
+
+.c-button:not(:disabled) {
+  cursor: pointer;
+}
+
+/**
+ * Mixin: Button Modifier
+ * --------------------------------------------------
+ */
+/**
+ * Component: Button
+ * Modifier: Red
+ * --------------------------------------------------
+ */
+.c-button--red {
+  background: #FF4136;
+  text-shadow: 2px 2px 0 #ff1103;
+}
+
+.c-button--red:hover {
+  background: #ff291d;
+}
+
+/**
+ * Component: Button
+ * Modifier: Purple
+ * --------------------------------------------------
+ */
+.c-button--purple {
+  background: #B10DC9;
+  text-shadow: 2px 2px 0 #870a99;
+}
+
+.c-button--purple:hover {
+  background: #9c0bb1;
+}
+
+/**
+ * Component: Button
+ * Modifier: Blue
+ * --------------------------------------------------
+ */
+.c-button--blue {
+  background: #001f3f;
+  text-shadow: 2px 2px 0 #00060c;
+}
+
+.c-button--blue:hover {
+  background: #001226;
+}
+
+/**
+ * Utility: Ripple
+ * --------------------------------------------------
+ */
+.c-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.c-ripple__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.c-ripple.is-active .c-ripple__circle {
+  animation: a-ripple 0.4s ease-in;
+}
+
+/**
+ * Animation: Ripple
+ * --------------------------------------------------
+ */
+@keyframes a-ripple {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    padding-bottom: 200%;
+    opacity: 0;
+  }
+}
